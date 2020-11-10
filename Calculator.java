@@ -43,7 +43,7 @@ class Calculator extends JFrame
 
     }
 
-    //Metodo para cambiar el tamaño de la calculadora
+    //Method for change window size
 	public void Size(int value)
 	{	
 		if(value > 1)

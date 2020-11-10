@@ -54,7 +54,6 @@ public class Menu extends JPanel implements ActionListener
 		grid.setBackground(Color.BLACK);
 		grid.setLayout(new GridLayout(1,4));
 		grid.setVisible(true);
-		//this.add(BorderLayout.CENTER, grid);
 		p4 = new JPanel();
 		p4.setBackground(Color.BLACK);
 		this.add(BorderLayout.CENTER, p4);

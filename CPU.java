@@ -17,9 +17,7 @@ public class CPU
 	// Method of saving the operands
 	public void Categorize(String value, String operator)
 	{	
-		if(value.equals("")){}
-
-		else if(start == true)
+		if(start == true)
 		{	
 			y = Double.parseDouble(value);
 			sign = operator;
@@ -36,9 +34,7 @@ public class CPU
 	// Method of saving operations in parentheses
 	public void Categorize2(String value, String operator)
 	{
-		if(value.equals(""))
-		{}
-		else if(start2 == true)
+		if(start2 == true)
 		{	
 			y = Double.parseDouble(value);
 			sign = operator;
@@ -111,11 +107,11 @@ public class CPU
 		else if(operator.equals("xˉ¹"))
 			y = 1/y;
 		
-		//Operacion para factorial
+		//Factorial
 		else if(operator.equals("x!"))
 			y = Factorial(y);
 		
-		//Operaciones Logaritmicas y Exponenciales
+		//Logaritmicas y Exponenciales
 		else if(operator.equals("ln"))
 		{
 			if(y < 0)

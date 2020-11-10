@@ -14,7 +14,7 @@ public class Keyboard extends JPanel implements ActionListener
 	private static final long serialVersionUID = 1L;
 	private String value = "";
 	private boolean start = false;
-	private String aux_value = "";
+	private String auxValue = "";
 	public boolean parenthesis = false;
 	private boolean x = true;
 	private String pausedValue = "";
@@ -109,8 +109,15 @@ public class Keyboard extends JPanel implements ActionListener
 	// Method for Configuring Buttons
 	public void Buttons(String nombre, JPanel keyboard)
 	{
-		final JButton button = new JButton(nombre);
-		button.setBackground(Color.GRAY);
+		JButton button = new JButton(nombre);
+		if (nombre.equals("="))
+			button.setBackground(new Color(255,244,43));
+		else if (nombre.equals("+") || nombre.equals("-") || nombre.equals("*") || nombre.equals("/"))
+			button.setBackground(new Color(30,30,225));
+		else if (nombre.equals("C") || nombre.equals("CE") || nombre.equals("←"))
+			button.setBackground(new Color(215,75,1));
+		else
+			button.setBackground(Color.GRAY);
 		button.setForeground(Color.black);
 		button.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		button.addActionListener(this);
@@ -169,8 +176,8 @@ public class Keyboard extends JPanel implements ActionListener
 		else if(value.equals("+") || value.equals("-") || value.equals("*") || value.equals("/") || value.equals("Mod") ||
 				value.equals("xʸ") || value.equals("√") || value.equals("E"))
 		{
-			if(aux_value.equals("+") == false || aux_value.equals("-") == false || aux_value.equals("*") == false || aux_value.equals("/") == false || 
-			   aux_value.equals("Mod") == false || aux_value.equals("xʸ") == false || aux_value.equals("√") == false || aux_value.equals("E") == false)
+			if(auxValue.equals("+") == false || auxValue.equals("-") == false || auxValue.equals("*") == false || auxValue.equals("/") == false || 
+			   auxValue.equals("Mod") == false || auxValue.equals("xʸ") == false || auxValue.equals("√") == false || auxValue.equals("E") == false)
 			{
 				if(parenthesis == true)
 				{
@@ -205,11 +212,11 @@ public class Keyboard extends JPanel implements ActionListener
 				value.equals("tanˉ¹") || value.equals("sinh") || value.equals("cosh") || value.equals("tanh") || 
 				value.equals("sinhˉ¹") ||value.equals("coshˉ¹") || value.equals("tanhˉ¹"))
 		{
-			if(aux_value.equals("sin")  == false || aux_value.equals("cos") == false || aux_value.equals("tan") == false || aux_value.equals("e") == false || 
-			   aux_value.equals("ln") == false || aux_value.equals("log") == false || aux_value.equals("xˉ¹") == false || aux_value.equals("x!") == false || 
-			   aux_value.equals("sinˉ¹") == false || aux_value.equals("cosˉ¹") == false || aux_value.equals("tanˉ¹") == false || aux_value.equals("sinh") == false || 
-			   aux_value.equals("cosh") == false || aux_value.equals("tanh") == false || aux_value.equals("sinhˉ¹") == false ||aux_value.equals("coshˉ¹") || 
-			   aux_value.equals("tanhˉ¹") == false)
+			if(auxValue.equals("sin")  == false || auxValue.equals("cos") == false || auxValue.equals("tan") == false || auxValue.equals("e") == false || 
+			   auxValue.equals("ln") == false || auxValue.equals("log") == false || auxValue.equals("xˉ¹") == false || auxValue.equals("x!") == false || 
+			   auxValue.equals("sinˉ¹") == false || auxValue.equals("cosˉ¹") == false || auxValue.equals("tanˉ¹") == false || auxValue.equals("sinh") == false || 
+			   auxValue.equals("cosh") == false || auxValue.equals("tanh") == false || auxValue.equals("sinhˉ¹") == false ||auxValue.equals("coshˉ¹") || 
+			   auxValue.equals("tanhˉ¹") == false)
 			   {
 				if(parenthesis == true)
 				{
@@ -262,7 +269,7 @@ public class Keyboard extends JPanel implements ActionListener
 		else
             screen.set(screen.get() + value);
 
-		aux_value = value;
+		auxValue = value;
 	}
 	
 	// Event method for each operator's actions

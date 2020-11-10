@@ -40,7 +40,6 @@ public void Configure(JTextField screen, int number)
     screen.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
     screen.setEditable(false);
 	screen.setHorizontalAlignment(SwingConstants.RIGHT);
-	//screen.addKeyListener(this);
 }
 
 	public void set(String message) 
